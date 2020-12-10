@@ -5,3 +5,5 @@ Created on Thu Dec 10 22:03:55 2020
 @author: lucas
 """
 
+a=2*2
+print (a)
