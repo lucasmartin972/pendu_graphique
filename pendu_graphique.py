@@ -17,7 +17,7 @@ from fonctions import *
 mw = Tk()
 mw.title('Jeu du Pendu')
 mw['bg']='#3D4042'
-mw.geometry('640x360+400+200')
+mw.geometry('1000x360+400+200')
 
 
 
@@ -58,20 +58,46 @@ def NouvellePartie():
     jeu(mots_pendu,score_max)
     
     
-    
+chance=8
+
+
+
+
+
+
+#codage de l'avancement du bonhomme
+if chance == 8:
+    photo="bonhomme8.gif"
+elif chance == 7:
+    photo="bonhomme7.gif"
+elif chance == 6:
+    photo="bonhomme6.gif"
+elif chance == 5:
+    photo="bonhomme5gif"
+elif chance == 4:
+    photo="bonhomme4.gif"
+elif chance == 3:
+    photo="bonhomme3.gif"
+elif chance == 2:
+    photo="bonhomme2.gif"
+elif chance == 1:
+    photo="bonhomme1.gif"
+elif chance == 0:
+    photo="bonhomme0.gif"
+
   
     
     
 
 
-Label(FrameAffichageMot, text = 'Proposez une lettre').pack(padx=10, pady=10)
+Label(FrameAffichageMot, text = 'Proposez une lettre').pack(padx=0, pady=0)
 
 
 
 
 
 BoutonNouvellePartie = Button(mw, text ='Nouvelle Partie?', command=NouvellePartie)
-BoutonNouvellePartie.pack(side='top',padx=1,pady=1)
+BoutonNouvellePartie.pack(padx=1,pady=1)
 
 
 
@@ -80,9 +106,9 @@ BoutonNouvellePartie.pack(side='top',padx=1,pady=1)
     
 #création d'un canvas
 Canevas= Canvas(mw,width=300,height=300, bg ='#3D4042')
-photo=PhotoImage(file="bonhomme1.gif")
-Canevas.create_image(0,0,anchor=NW,image=photo)
-Canevas.pack()                                             
+photo=PhotoImage(file=photo)
+item=Canevas.create_image(0,0,anchor=NW,image=photo)
+Canevas.pack(side='right',padx=40)                                           
 
 
 
